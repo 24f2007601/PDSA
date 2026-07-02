@@ -47,4 +47,7 @@ print(S)
 
 S.pop()
 print(S)
-        
+
+
+#S.pop()
+#print(S.pop())     
