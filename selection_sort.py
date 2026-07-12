@@ -1,20 +1,35 @@
+"""
+Selection Sort explanation:
+This program repeatedly finds the smallest value in the unsorted part of the list and
+places it at the front.
+
+How it works:
+1. Assume the first position is the smallest.
+2. Compare it with the rest of the list.
+3. If a smaller value is found, swap it into place.
+4. Repeat until the list is fully sorted.
+
+This algorithm is simple but not the fastest for large lists.
+"""
+
+
 class Solution:
     def sortArray(self, nums: list[int]) -> list[int]:
         n = len(nums)
-        
-        # Traverse through all array elements
+
+        # Go through each position in the list.
         for i in range(n):
-            # Find the minimum element in remaining unsorted array
+            # Assume the current position holds the smallest value for now.
             min_idx = i
             for j in range(i + 1, n):
                 if nums[j] < nums[min_idx]:
                     min_idx = j
-                    
-            # Swap the found minimum element with the first element
-            # of the unsorted part
+
+            # Put the smallest value found into its correct position.
             nums[i], nums[min_idx] = nums[min_idx], nums[i]
-            
+
         return nums
+
 
 # Example usage:
 solution = Solution()

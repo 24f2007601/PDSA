@@ -1,3 +1,13 @@
+"""
+Graph path-checking explanation:
+This program checks whether a path exists between two nodes in an undirected graph.
+It uses BFS (Breadth-First Search), which explores nearby nodes first before moving farther away.
+
+This is helpful when you need to answer questions like:
+- Can I reach this city from this city?
+- Is there a connection between two people in a network?
+"""
+
 from collections import deque
 
 
@@ -5,40 +15,35 @@ class Solution:
     def validPath(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:
         """Check whether a path exists from source to destination in an undirected graph."""
 
-        # Step 1: If the source and destination are the same, a path already exists.
+        # If the start and end are the same, a path already exists.
         if source == destination:
             return True
 
-        # Step 2: Build an adjacency list so each node can quickly access its neighbors.
-        # This is better than checking every pair of nodes every time.
+        # Build an adjacency list so each node knows its neighbors.
         graph = [[] for _ in range(n)]
         for u, v in edges:
             graph[u].append(v)
             graph[v].append(u)
 
-        # Step 3: Use BFS (Breadth-First Search) to explore nodes level by level.
-        # Start from the source and keep track of visited nodes.
+        # Use a queue to explore nodes level by level.
         queue = deque([source])
         visited = [False] * n
         visited[source] = True
 
-    
-        # Step 4: Continue until the queue is empty.
         while queue:
-            # Take the next node to process from the front of the queue.
             node = queue.popleft()
 
-            # Step 5: If we reach the destination, a valid path exists.
+            # If we reach the destination, a valid path exists.
             if node == destination:
                 return True
 
-            # Step 6: Visit all unvisited neighbors of the current node.
+            # Visit all unvisited neighbors of the current node.
             for neighbor in graph[node]:
                 if not visited[neighbor]:
                     visited[neighbor] = True
                     queue.append(neighbor)
 
-        # Step 7: If BFS finishes without finding the destination, no path exists.
+        # If the search finishes without reaching the destination, no path exists.
         return False
 
     def validPathOptimized(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:

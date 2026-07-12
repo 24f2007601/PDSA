@@ -1,22 +1,37 @@
+"""
+Insertion Sort explanation:
+This program sorts a list by building the final sorted list one element at a time.
+It starts with the second item and compares it with the items before it.
+If the current item is smaller, it shifts the larger items to the right until the
+correct position is found.
+
+Why this is useful:
+- Easy to understand.
+- Good for small lists.
+- Works in-place, so it does not need extra memory.
+"""
+
+
 class Solution:
     def insertionSort(self, nums: list[int]) -> list[int]:
         n = len(nums)
-        
-        # Traverse from 1 to len(nums)
+
+        # Start from the second element because the first element is already considered sorted.
         for i in range(1, n):
             key = nums[i]
-            
-            # Move elements of nums[0..i-1], that are greater than key,
-            # to one position ahead of their current position
+
+            # Compare the current value with the sorted part on the left.
+            # Shift larger values to the right so the key can be placed in its correct spot.
             j = i - 1
             while j >= 0 and key < nums[j]:
                 nums[j + 1] = nums[j]
                 j -= 1
-                
-            # Place the key at its correct position
+
+            # Insert the key at the correct position.
             nums[j + 1] = key
-            
+
         return nums
+
 
 # Example usage:
 solution = Solution()
