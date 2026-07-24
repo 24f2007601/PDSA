@@ -1,0 +1,35 @@
+import heapq
+
+def Airport(distance_map):
+    # If the map is empty, no distance is required
+    if not distance_map:
+        return 0
+    
+    # Track visited cities to avoid cycles
+    visited = set()
+    
+    # Min-heap to store tuples of (distance, current_city)
+    # Start arbitrarily from the first city available in the distance_map
+    start_city = next(iter(distance_map.keys()))
+    min_heap = [(0, start_city)]
+    
+    total_minimum_distance = 0
+    
+    while min_heap:
+        distance, city = heapq.heappop(min_heap)
+        
+        # If the city is already connected to our network, skip it
+        if city in visited:
+            continue
+            
+        # Include this city and its connection distance in our MST
+        visited.add(city)
+        total_minimum_distance += distance
+        
+        # Explore neighboring cities from the current city
+        if city in distance_map:
+            for neighbor, neighbor_distance in distance_map[city]:
+                if neighbor not in visited:
+                    heapq.heappush(min_heap, (neighbor_distance, neighbor))
+                    
+    return total_minimum_distance
