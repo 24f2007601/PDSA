@@ -7,6 +7,7 @@ This workspace contains Python programs for common data structures and algorithm
 - Added clear explanations at the top of each script.
 - Added inline comments to explain the main steps.
 - Fixed a small syntax issue in the counting sort example.
+- Added comprehensive documentation for all stack operations in `stack.py`.
 
 ## Repository overview
 
@@ -18,26 +19,27 @@ This workspace contains Python programs for common data structures and algorithm
 
 ### Data structures
 - [linkedlist.py](linkedlist.py): Shows a simple linked list with append and delete operations.
-- [stack.py](stack.py): Implements a stack using a Python list.
+- [stack.py](stack.py): Implements a stack using a Python list with clear documentation for all operations.
 - [stacklinkedlist.py](stacklinkedlist.py): A linked-list-based stack file for future implementation.
 
 ### Graph and path problems
 - [find_if_path_exista_in_graph.py](find_if_path_exista_in_graph.py): Checks whether a path exists between two nodes using BFS.
 - [numberofprovinces.py](numberofprovinces.py): Counts connected provinces/cities using DFS.
-- [week4grap1.py](week4grap1.py): Finds the shortest connection level between two people in a graph.
-- [week4grap3.py](week4grap3.py): Finds the longest route in a directed graph.
+- [week4grap1.py](week4grap1.py): Finds the shortest connection level between two people in a graph using BFS.
+- [week4grap3.py](week4grap3.py): Finds the longest route in a directed graph using topological traversal.
 
 ### Practice and assignment problems
-- [w1_grpa1.py](w1_grpa1.py): Finds the minimum difference when choosing P elements.
+- [w1_grpa1.py](w1_grpa1.py): Finds the minimum difference when choosing P elements using a sliding window approach.
 - [w1_grpa3.py](w1_grpa3.py): Detects the data type that appears only once in a mixed list.
-- [w1_ppa2.py](w1_ppa2.py): Validates and classifies triangles.
-- [w2_grpa1.py](w2_grpa1.py): Sorts strings in two different ways.
-- [w2_grpa2.py](w2_grpa2.py): Finds the largest element in a rotated sorted array.
-- [w2_grpa3.py](w2_grpa3.py): Merges two sorted arrays in place.
-- [w2_ppa1.py](w2_ppa1.py): Performs binary search and counts comparisons.
-- [w2_ppa2.py](w2_ppa2.py): Implements counting sort for values in a small range.
-- [week3_grap2.py](week3_grap2.py): Evaluates arithmetic expressions in postfix form.
-- [week3_ppa1.py](week3_ppa1.py): Sorts dish IDs by frequency and value.
+- [w1_ppa2.py](w1_ppa2.py): Validates and classifies triangles, including area calculation using Heron's formula.
+- [w2_grpa1.py](w2_grpa1.py): Sorts strings in two different ways (by first letter, and by letter/number combination).
+- [w2_grpa2.py](w2_grpa2.py): Finds the largest element in a rotated sorted array using binary search.
+- [w2_grpa3.py](w2_grpa3.py): Merges two sorted arrays in place while maintaining sorted order.
+- [w2_ppa1.py](w2_ppa1.py): Performs binary search and counts the number of comparisons made.
+- [w2_ppa2.py](w2_ppa2.py): Implements counting sort for values in a small range [0, r).
+- [week3_grap2.py](week3_grap2.py): Evaluates arithmetic expressions in postfix form (Reverse Polish Notation) using a stack.
+- [week3_ppa1.py](week3_ppa1.py): Sorts dish IDs by frequency (descending) and value (ascending).
+- [week5_live_coding_p1](week5_live_coding_p1): Finds the minimum spanning tree (MST) using Prim's algorithm with a min-heap.
 
 ## How to run the files
 
@@ -52,6 +54,10 @@ python linkedlist.py
 python stack.py
 python find_if_path_exista_in_graph.py
 python numberofprovinces.py
+python w1_grpa1.py
+python w2_grpa1.py
+python week3_grap2.py
+python week5_live_coding_p1
 ```
 
 ## Key concepts covered
@@ -61,6 +67,7 @@ python numberofprovinces.py
 - Graph search: BFS and DFS
 - Searching: binary search
 - Problem-solving patterns: sliding window, counting sort, topological-style traversal
+- Minimum Spanning Tree: Prim's algorithm using a min-heap
 
 ## Notes
 
