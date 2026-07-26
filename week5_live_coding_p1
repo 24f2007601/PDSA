@@ -1,21 +1,51 @@
+"""
+Airport Connection (Minimum Spanning Tree) explanation:
+This program finds the minimum total distance needed to connect all cities in a network.
+
+It uses Prim's algorithm with a min-heap:
+- Start from any city
+- Repeatedly add the cheapest connection that brings a new city into the network
+- Stop when all cities are connected
+
+This is like building a road network where you want to minimize total road length
+while still being able to reach every city.
+"""
+
 import heapq
 
+
 def Airport(distance_map):
+    """
+    Find the minimum total distance to connect all cities using the fewest total roads.
+    
+    This implements Prim's algorithm for finding the Minimum Spanning Tree (MST).
+    
+    Args:
+        distance_map: A dictionary where keys are city names and values are lists
+                      of (neighbor_city, distance) tuples
+                      
+    Returns:
+        The minimum total distance needed to connect all cities
+    """
     # If the map is empty, no distance is required
     if not distance_map:
         return 0
     
-    # Track visited cities to avoid cycles
+    # Track visited cities to avoid adding the same city twice
     visited = set()
     
     # Min-heap to store tuples of (distance, current_city)
+    # We always pick the city with the smallest connection distance
     # Start arbitrarily from the first city available in the distance_map
     start_city = next(iter(distance_map.keys()))
     min_heap = [(0, start_city)]
     
+    # This will accumulate the minimum total distance
     total_minimum_distance = 0
     
+    # Keep going until we've processed all reachable cities
     while min_heap:
+        # Get the city with the smallest connection distance
         distance, city = heapq.heappop(min_heap)
         
         # If the city is already connected to our network, skip it
@@ -29,6 +59,7 @@ def Airport(distance_map):
         # Explore neighboring cities from the current city
         if city in distance_map:
             for neighbor, neighbor_distance in distance_map[city]:
+                # Add unvisited neighbors to the heap with their distances
                 if neighbor not in visited:
                     heapq.heappush(min_heap, (neighbor_distance, neighbor))
                     
