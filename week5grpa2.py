@@ -68,21 +68,61 @@ def dijkstra(WList, start):
     return distances, parent 
     
 def reconstruct_path(parent, target):
+    """
+    Reconstruct the shortest path from start to target using parent pointers.
+    
+    Args:
+        parent: A dictionary mapping each node to its parent in the shortest path
+        target: The destination node
+        
+    Returns:
+        A list of nodes representing the path from start to target (in order)
+    """
     path = []
     current = target
+    
+    # Follow parent pointers backwards from target to start
     while current is not None:
         path.append(current)
         current = parent[current]
+    
+    # Reverse to get the path from start to target
     return path[::-1]
     
 def min_cost_walk(WList, S, D, V):
+    """
+    Find the minimum cost path from S to D that must go through V.
+    
+    This is useful when you want to go from S to D but must pass through V
+    (like making a pit stop along the way).
+    
+    The solution: Find shortest path S→V, then V→D, and combine them.
+    
+    Args:
+        WList: A weighted graph
+        S: Start node
+        D: Destination node
+        V: Required intermediate node (must visit this node)
+        
+    Returns:
+        A tuple (total_cost, full_path) where:
+        - total_cost: The minimum cost to go from S to D via V
+        - full_path: The list of nodes in the path
+    """
+    # Find shortest paths from S to all nodes
     dist_from_S, parent_from_S = dijkstra(WList, S)
+    
+    # Find shortest paths from V to all nodes
     dist_from_V, parent_from_V = dijkstra(WList, V)
+    
+    # Total cost = cost from S to V + cost from V to D
     total_cost = dist_from_S[V] + dist_from_V[D]
     
+    # Reconstruct both parts of the path
     path_S_to_V = reconstruct_path(parent_from_S, V)
     path_V_to_D = reconstruct_path(parent_from_V, D)
     
+    # Combine the paths (remove the duplicate V at the junction)
     full_path = path_S_to_V + path_V_to_D[1:]
     
     return (total_cost, full_path)
