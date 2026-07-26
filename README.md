@@ -26,7 +26,9 @@ This workspace contains Python programs for common data structures and algorithm
 - [numberofprovinces.py](numberofprovinces.py): Counts connected provinces/cities using DFS.
 - [week4grap1.py](week4grap1.py): Finds the shortest connection level between two people in a graph using BFS.
 - [week4grap3.py](week4grap3.py): Finds the longest route in a directed graph using topological traversal.
-- [week5_grap1.py](week5_grap1.py): Finds the minimum spanning tree (MST) using Kruskal's algorithm.
+- [week5_grap1.py](week5_grap1.py): Finds the minimum spanning tree (MST) using Kruskal's algorithm with Union-Find.
+- [week6grap1.py](week6grap1.py): Detects negative weight cycles in a graph using the Bellman-Ford algorithm.
+- [week6_grap2.py](week6_grap2.py): Implements a Binary Search Tree (BST) with insertion and finding the maximum value less than K.
 
 ### Practice and assignment problems
 - [w1_grpa1.py](w1_grpa1.py): Finds the minimum difference when choosing P elements using a sliding window approach.
@@ -42,6 +44,7 @@ This workspace contains Python programs for common data structures and algorithm
 - [week5_live_coding_p1](week5_live_coding_p1): Finds the minimum spanning tree (MST) using Prim's algorithm with a min-heap.
 - [week5grpa2.py](week5grpa2.py): Finds the shortest path with minimum cost using Dijkstra's algorithm.
 - [week5grpa3.py](week5grpa3.py): Detects negative weight cycles in a graph using the Bellman-Ford algorithm.
+- [week 6_grpa3.py](week%206_grpa3.py): Builds a max heap from an array using the heapify procedure.
 
 ## How to run the files
 
@@ -62,18 +65,22 @@ python week5_live_coding_p1
 python week5_grap1.py
 python week5grpa2.py
 python week5grpa3.py
+python week6grap1.py
+python week6_grap2.py
+python "week 6_grpa3.py"
 ```
 
 ## Key concepts covered
 
 - Sorting algorithms: insertion sort, merge sort, selection sort
-- Data structures: linked list, stack
+- Data structures: linked list, stack, binary search tree
 - Graph search: BFS and DFS
 - Searching: binary search
 - Problem-solving patterns: sliding window, counting sort, topological-style traversal
 - Minimum Spanning Tree: Prim's and Kruskal's algorithms using a min-heap
 - Shortest path: Dijkstra's algorithm
 - Negative cycle detection: Bellman-Ford algorithm
+- Heap operations: building a max heap
 
 ## Notes
 

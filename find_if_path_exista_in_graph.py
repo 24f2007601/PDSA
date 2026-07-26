@@ -13,24 +13,38 @@ from collections import deque
 
 class Solution:
     def validPath(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:
-        """Check whether a path exists from source to destination in an undirected graph."""
+        """
+        Check whether a path exists from source to destination in an undirected graph.
+        
+        Args:
+            n: Number of nodes in the graph (nodes are numbered 0 to n-1)
+            edges: List of edges, where each edge is [u, v] connecting nodes u and v
+            source: Starting node
+            destination: Target node
+            
+        Returns:
+            True if a path exists, False otherwise
+        """
 
         # If the start and end are the same, a path already exists.
         if source == destination:
             return True
 
         # Build an adjacency list so each node knows its neighbors.
+        # graph[i] contains a list of all nodes connected to node i
         graph = [[] for _ in range(n)]
         for u, v in edges:
             graph[u].append(v)
             graph[v].append(u)
 
-        # Use a queue to explore nodes level by level.
+        # Use a queue to explore nodes level by level (BFS)
         queue = deque([source])
         visited = [False] * n
         visited[source] = True
 
+        # Keep exploring until the queue is empty
         while queue:
+            # Get the next node to explore
             node = queue.popleft()
 
             # If we reach the destination, a valid path exists.
@@ -47,16 +61,29 @@ class Solution:
         return False
 
     def validPathOptimized(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:
-        """A slightly more compact BFS version using a set for visited nodes."""
+        """
+        A slightly more compact BFS version using a set for visited nodes.
+        
+        Args:
+            n: Number of nodes in the graph
+            edges: List of edges
+            source: Starting node
+            destination: Target node
+            
+        Returns:
+            True if a path exists, False otherwise
+        """
 
         if source == destination:
             return True
 
+        # Build adjacency list
         graph = [[] for _ in range(n)]
         for u, v in edges:
             graph[u].append(v)
             graph[v].append(u)
 
+        # Use a set instead of a list for visited nodes (more efficient lookups)
         queue = deque([source])
         visited = {source}
 

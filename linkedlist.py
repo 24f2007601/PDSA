@@ -15,14 +15,33 @@ The methods in this file allow us to:
 
 class ListNode:
     def __init__(self, v=None):
+        """
+        Create a new node for the linked list.
+        
+        Args:
+            v: The value to store in this node. If None, this is an empty node.
+        """
         self.value = v
         self.next = None
 
     def isempty(self):
-        # A node is considered empty when it does not hold a value.
+        """
+        Check if this node is empty.
+        
+        A node is considered empty when it does not hold a value (value is None).
+        
+        Returns:
+            True if this node's value is None, False otherwise.
+        """
         return self.value is None
 
     def append(self, v):
+        """
+        Add a new value to the end of the linked list.
+        
+        Args:
+            v: The value to add to the list
+        """
         # If this node is empty, store the new value here.
         if self.isempty():
             self.value = v
@@ -36,6 +55,12 @@ class ListNode:
         return
 
     def delete(self, v):
+        """
+        Remove a value from the linked list.
+        
+        Args:
+            v: The value to remove from the list
+        """
         # If the list is empty, there is nothing to remove.
         if self.isempty():
             return
@@ -43,6 +68,8 @@ class ListNode:
         # If the current node contains the target value, remove it.
         if self.value == v:
             self.value = None
+            # If there's a next node, copy its value and link to its next
+            # This effectively removes the current node by skipping over it
             if self.next is not None:
                 self.value = self.next.value
                 self.next = self.next.next
@@ -52,6 +79,7 @@ class ListNode:
         else:
             if self.next is not None:
                 self.next.delete(v)
+                # After deletion, if the next node became empty, remove it
                 if self.next.value is None:
                     self.next = None
         return 

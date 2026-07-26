@@ -8,9 +8,20 @@ returns the type whose count is exactly 1.
 
 
 def odd_one(L):
-    # Count how many times each data type appears.
+    """
+    Find the data type that appears exactly once in the list.
+    
+    Args:
+        L: A list containing items of various data types (int, float, str, bool)
+        
+    Returns:
+        The data type (as a string) that appears exactly once in the list,
+        or None if no unique data type exists
+    """
+    # Initialize a dictionary to count how many times each data type appears
     type_counts = {'int': 0, 'float': 0, 'str': 0, 'bool': 0}
 
+    # Count each item's data type
     for item in L:
         if type(item) == int:
             type_counts['int'] += 1
@@ -21,7 +32,7 @@ def odd_one(L):
         elif type(item) == bool:
             type_counts['bool'] += 1
 
-    # Return the data type that appeared exactly once.
+    # Return the data type that appeared exactly once
     for data_type, count in type_counts.items():
         if count == 1:
             return data_type
