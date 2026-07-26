@@ -15,7 +15,6 @@ This workspace contains Python programs for common data structures and algorithm
 - [insertion_sort.py](insertion_sort.py): Implements insertion sort by inserting each element into its correct place.
 - [merge_sort.py](merge_sort.py): Implements merge sort using divide-and-conquer.
 - [selection_sort.py](selection_sort.py): Implements selection sort by repeatedly picking the smallest value.
-- [quick_so](quick_so): Implements quick sort with a pivot-based partitioning method.
 
 ### Data structures
 - [linkedlist.py](linkedlist.py): Shows a simple linked list with append and delete operations.
@@ -27,6 +26,7 @@ This workspace contains Python programs for common data structures and algorithm
 - [numberofprovinces.py](numberofprovinces.py): Counts connected provinces/cities using DFS.
 - [week4grap1.py](week4grap1.py): Finds the shortest connection level between two people in a graph using BFS.
 - [week4grap3.py](week4grap3.py): Finds the longest route in a directed graph using topological traversal.
+- [week5_grap1.py](week5_grap1.py): Finds the minimum spanning tree (MST) using Kruskal's algorithm.
 
 ### Practice and assignment problems
 - [w1_grpa1.py](w1_grpa1.py): Finds the minimum difference when choosing P elements using a sliding window approach.
@@ -40,6 +40,8 @@ This workspace contains Python programs for common data structures and algorithm
 - [week3_grap2.py](week3_grap2.py): Evaluates arithmetic expressions in postfix form (Reverse Polish Notation) using a stack.
 - [week3_ppa1.py](week3_ppa1.py): Sorts dish IDs by frequency (descending) and value (ascending).
 - [week5_live_coding_p1](week5_live_coding_p1): Finds the minimum spanning tree (MST) using Prim's algorithm with a min-heap.
+- [week5grpa2.py](week5grpa2.py): Finds the shortest path with minimum cost using Dijkstra's algorithm.
+- [week5grpa3.py](week5grpa3.py): Detects negative weight cycles in a graph using the Bellman-Ford algorithm.
 
 ## How to run the files
 
@@ -49,7 +51,6 @@ Run any Python file directly from the workspace folder:
 python insertion_sort.py
 python merge_sort.py
 python selection_sort.py
-python quick_so
 python linkedlist.py
 python stack.py
 python find_if_path_exista_in_graph.py
@@ -58,16 +59,21 @@ python w1_grpa1.py
 python w2_grpa1.py
 python week3_grap2.py
 python week5_live_coding_p1
+python week5_grap1.py
+python week5grpa2.py
+python week5grpa3.py
 ```
 
 ## Key concepts covered
 
-- Sorting algorithms: insertion sort, merge sort, selection sort, quick sort
+- Sorting algorithms: insertion sort, merge sort, selection sort
 - Data structures: linked list, stack
 - Graph search: BFS and DFS
 - Searching: binary search
 - Problem-solving patterns: sliding window, counting sort, topological-style traversal
-- Minimum Spanning Tree: Prim's algorithm using a min-heap
+- Minimum Spanning Tree: Prim's and Kruskal's algorithms using a min-heap
+- Shortest path: Dijkstra's algorithm
+- Negative cycle detection: Bellman-Ford algorithm
 
 ## Notes
 
