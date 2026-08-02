@@ -8,6 +8,10 @@ This workspace contains Python programs for common data structures and algorithm
 - Added inline comments to explain the main steps.
 - Fixed a small syntax issue in the counting sort example.
 - Added comprehensive documentation for all stack operations in `stack.py`.
+- Added detailed comments to all sorting algorithms (insertion, merge, selection).
+- Added documentation for graph algorithms (BFS, DFS, shortest path, MST).
+- Added greedy algorithm explanations for activity selection and minimum platforms.
+- Added binary search tree implementation with comprehensive comments.
 
 ## Repository overview
 
@@ -27,8 +31,15 @@ This workspace contains Python programs for common data structures and algorithm
 - [week4grap1.py](week4grap1.py): Finds the shortest connection level between two people in a graph using BFS.
 - [week4grap3.py](week4grap3.py): Finds the longest route in a directed graph using topological traversal.
 - [week5_grap1.py](week5_grap1.py): Finds the minimum spanning tree (MST) using Kruskal's algorithm with Union-Find.
+- [week5_live_coding_p1](week5_live_coding_p1): Finds the minimum spanning tree (MST) using Prim's algorithm with a min-heap.
+- [week5grpa2.py](week5grpa2.py): Finds the shortest path with minimum cost using Dijkstra's algorithm.
+- [week5grpa3.py](week5grpa3.py): Detects negative weight cycles in a graph using the Bellman-Ford algorithm.
 - [week6grap1.py](week6grap1.py): Detects negative weight cycles in a graph using the Bellman-Ford algorithm.
 - [week6_grap2.py](week6_grap2.py): Implements a Binary Search Tree (BST) with insertion and finding the maximum value less than K.
+
+### Greedy algorithms
+- [week7.grpa2.py](week7.grpa2.py): Calculates the minimum number of platforms needed at a railway station.
+- [week7_grpa3.py](week7_grpa3.py): Finds the maximum number of non-overlapping meetings using activity selection.
 
 ### Practice and assignment problems
 - [w1_grpa1.py](w1_grpa1.py): Finds the minimum difference when choosing P elements using a sliding window approach.
@@ -41,9 +52,6 @@ This workspace contains Python programs for common data structures and algorithm
 - [w2_ppa2.py](w2_ppa2.py): Implements counting sort for values in a small range [0, r).
 - [week3_grap2.py](week3_grap2.py): Evaluates arithmetic expressions in postfix form (Reverse Polish Notation) using a stack.
 - [week3_ppa1.py](week3_ppa1.py): Sorts dish IDs by frequency (descending) and value (ascending).
-- [week5_live_coding_p1](week5_live_coding_p1): Finds the minimum spanning tree (MST) using Prim's algorithm with a min-heap.
-- [week5grpa2.py](week5grpa2.py): Finds the shortest path with minimum cost using Dijkstra's algorithm.
-- [week5grpa3.py](week5grpa3.py): Detects negative weight cycles in a graph using the Bellman-Ford algorithm.
 - [week 6_grpa3.py](week%206_grpa3.py): Builds a max heap from an array using the heapify procedure.
 
 ## How to run the files
@@ -68,19 +76,22 @@ python week5grpa3.py
 python week6grap1.py
 python week6_grap2.py
 python "week 6_grpa3.py"
+python week7.grpa2.py
+python week7_grpa3.py
 ```
 
 ## Key concepts covered
 
-- Sorting algorithms: insertion sort, merge sort, selection sort
-- Data structures: linked list, stack, binary search tree
-- Graph search: BFS and DFS
-- Searching: binary search
-- Problem-solving patterns: sliding window, counting sort, topological-style traversal
-- Minimum Spanning Tree: Prim's and Kruskal's algorithms using a min-heap
-- Shortest path: Dijkstra's algorithm
-- Negative cycle detection: Bellman-Ford algorithm
-- Heap operations: building a max heap
+- **Sorting algorithms**: insertion sort, merge sort, selection sort
+- **Data structures**: linked list, stack, binary search tree
+- **Graph search**: BFS and DFS
+- **Searching**: binary search
+- **Problem-solving patterns**: sliding window, counting sort, topological-style traversal
+- **Minimum Spanning Tree**: Prim's and Kruskal's algorithms using a min-heap
+- **Shortest path**: Dijkstra's algorithm
+- **Negative cycle detection**: Bellman-Ford algorithm
+- **Heap operations**: building a max heap
+- **Greedy algorithms**: activity selection, minimum platforms (interval scheduling)
 
 ## Notes
 
